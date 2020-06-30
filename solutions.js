@@ -13,20 +13,55 @@
 
 
 //TODO: Define a function named isOdd that takes in any input and returns true if the input is an odd number, return false for any other situation. You do not need to consider floating-point and decimal numbers.
-
+const isOdd = function (input) {
+    if (input && !isNaN(input) && parseInt(input) % 2 !== 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 //TODO: Define a function named isVowel that takes in a single character and returns true if the character is a vowel. *Not including the letter 'y'
-
+const isVowel = function (letter) {
+    if (isNaN(letter)) {
+        switch (letter.toLowerCase()) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                return true;
+            default:
+                return false;
+        }
+    } else
+        return false;
+}
 
 //TODO: Define a function named combineStrings that takes in two parameters, if both parameters are strings, then return a concatenated string of both parameters. Otherwise, return false.
-
+const combineStrings = function (str1, str2) {
+    if (isNaN(str1) && isNaN(str2))
+        return str1.concat(str2);
+    else
+        return false;
+}
 
 //TODO: Define a function named sumArgs that takes in three parameters, if they are numbers then add them together. Otherwise return false.
-
+const sumArgs = function (arg1, arg2, arg3) {
+    if (typeof arg1 === 'number' && typeof arg2 === 'number' && typeof arg3 === 'number')
+        return arg1 + arg2 + arg3;
+    else
+        return false;
+}
 
 
 //TODO: Define a function named truncateString that takes in a string as the first parameter and a number as the second parameter. Truncate (shorten) the string by the length based on the argument passed in. For example, truncateString("hello world",1) would return "hello worl"
-
+const truncateString = function (str, num) {
+    if (typeof str === 'string' && typeof num === 'number')
+        return str.substring(0, str.length - num);
+    else
+        return false;
+}
 
 //TODO: Define a function named `reverseSign` that takes in a number as the first parameter. Reverse the sign of the argument passed in, return false if the argument is not a number. For example, `reverseSign(1)` would return `-1`.
 
