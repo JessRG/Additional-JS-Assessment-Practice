@@ -64,15 +64,49 @@ const truncateString = function (str, num) {
 }
 
 //TODO: Define a function named `reverseSign` that takes in a number as the first parameter. Reverse the sign of the argument passed in, return false if the argument is not a number. For example, `reverseSign(1)` would return `-1`.
-
+const reverseSign = function (num) {
+    let res = parseFloat(num);
+    if (!Number.isNaN(res)) {
+        return res * -1;
+    } else {
+        return false;
+    }
+}
 
 //TODO: Define a function named `makeUppercase` that takes in a string as the first parameter. Return the argument passed in entirely uppercased, return false if the argument is not a string. For example, `makeUppercase("test")` would return `"TEST"`.
-
+const makeUppercase = function (str) {
+    if (isNaN(str) && typeof str === 'string') {
+        return str.toUpperCase();
+    } else {
+        return false;
+    }
+}
 
 //TODO: Define a function named `isMultiple` that takes in two `number` parameters. Return `true` if one argument is a multiple of the other, `false` otherwise. For example, `isMultiple(2, 6)` would return `true`.
-
+const isMultiple = function (num1, num2) {
+    if (num1 > num2) {
+        return num1 % num2 === 0;
+    } else if(num1 === num2) {
+        return false;
+    } else {
+        return num2 % num1 === 0;
+    }
+}
 
 //TODO: Define a function named `canPurchase` that takes in two `number` parameters, `billAmount` & `availableCash`. Return `true` if `availableCash` is greater than `billAmount`, `false` otherwise. For example, `canPurchase(10, 20)` would return `true`.
-
+const canPurchase = function (billAmount, availableCash) {
+    if (parseFloat(billAmount) < parseFloat(availableCash)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 //TODO: Define a function named `getInitials` that takes in two `string` parameters, `first` & `last`. Return the names combined and formatted as initials, return `false` if either parameter is invalid. For example, `getInitials("John", "Snow")` would return `"J.S."`
+const getInitials = function (first, last) {
+    if (first && last && isNaN(first) && isNaN(last)) {
+        return first.slice(0, 1).toUpperCase() + '.' + last.slice(0, 1).toUpperCase() + '.'
+    } else {
+        return false;
+    }
+}
